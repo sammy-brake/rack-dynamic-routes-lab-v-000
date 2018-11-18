@@ -15,7 +15,7 @@ class Application
           list << product
         end
       end
-      if @@items.include?(product)
+      if @@items.include?(list[0])
         resp.write list[0].price
       else
         resp.write "Item not found"
@@ -28,6 +28,3 @@ class Application
     resp.finish
   end
 end
-
-
-  
