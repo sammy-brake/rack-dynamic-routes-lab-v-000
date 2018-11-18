@@ -6,6 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     item = req.path.split("/").pop
+    binding.pry 
     if req.path.match(/items/)
       #if the item is in @@items, print the price
       @@items.each do |individual_item|
