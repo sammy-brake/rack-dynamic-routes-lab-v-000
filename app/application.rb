@@ -9,7 +9,7 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         resp.write item.price
-        binding.pry 
+        binding.pry
       else
         resp.write "Item not found"
         resp.status = 400
