@@ -7,6 +7,7 @@ class Application
     req = Rack::Request.new(env)
     if req.path.match(/items/)
       item = req.params["item"]
+      binding.pry 
       if @@items.include?(item)
         resp.write item.price
         binding.pry
