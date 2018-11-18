@@ -9,7 +9,13 @@ class Application
 
     if req.path.match(/items/)
       binding.pry
-      if @@items.include?(item)
+      list = []
+      @@items.map do |product|
+        if product.name == item 
+          list << product 
+        end 
+      end 
+      if @@items.include?(product)
         resp.write item.price
       else
         resp.write "Item not found"
@@ -24,4 +30,4 @@ class Application
 end
 
 
-
+  
