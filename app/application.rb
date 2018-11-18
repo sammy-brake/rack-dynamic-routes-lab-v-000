@@ -10,10 +10,10 @@ class Application
     if req.path.match(/items/)
       if @@items.include?(item)
         resp.write item.price
-      else 
+      else
         resp.write "Item not found"
              resp.status = 400
-      end 
+      end
       #if the item is in @@items, print the price
     #   @@items.each do |individual_item|
     #     if individual_item == item
