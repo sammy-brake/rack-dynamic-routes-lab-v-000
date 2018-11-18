@@ -9,6 +9,9 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         resp.write item.price 
+      else 
+        resp.write "Item not found"
+        resp.status = 400 
     else
       resp.write "Route not found"
       resp.status = 404
