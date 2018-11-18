@@ -8,7 +8,7 @@ class Application
     item = req.path.split("/").pop
 
     if req.path.match(/items/)
-      binding.pry
+      # binding.pry
       list = []
       @@items.map do |product|
         if product.name == item
