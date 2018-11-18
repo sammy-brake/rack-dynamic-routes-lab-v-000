@@ -8,9 +8,7 @@ class Application
     item = req.path.split("/").pop
      if req.path.match(/items/)
        binding.pry
-
-       if @@items.include?(item)
-         resp.write item.price
+       
         else
           resp.write "Item not found"
           resp.status = 400
