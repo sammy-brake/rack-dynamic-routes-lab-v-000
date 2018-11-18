@@ -9,7 +9,7 @@ class Application
      if req.path.match(/items/)
        binding.pry
 
-       if Item.all.include?(item)
+       if @@items.include?(item)
          resp.write item.price
         else
           resp.write "Item not found"
