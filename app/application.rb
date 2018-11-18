@@ -8,6 +8,7 @@ class Application
     if req.path.match(/items/)
       item = req.params["item"]
       if @@items.include?(item)
+        resp.write item.price 
     else
       resp.write "Route not found"
       resp.status = 404
