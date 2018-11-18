@@ -8,7 +8,7 @@ class Item
     @price = price
   end
 
-  def self.all 
-    @@items 
-  end 
+  def self.all
+    @@items
+  end
 end
