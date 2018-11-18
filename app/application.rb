@@ -11,12 +11,12 @@ class Application
       binding.pry
       list = []
       @@items.map do |product|
-        if product.name == item 
-          list << product 
-        end 
-      end 
+        if product.name == item
+          list << product
+        end
+      end
       if @@items.include?(product)
-        resp.write item.price
+        resp.write list[0].price
       else
         resp.write "Item not found"
              resp.status = 400
