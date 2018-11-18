@@ -5,16 +5,16 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    if req.path.match(/items/)
-      binding.pry
-      item = req.params["item"]
-      if @@items.include?(item)
+    item = req.path.split("/").pop
+    
+    # if req.path.match(/items/)
+     if @@items.include?(item)
         resp.write item.price
-        binding.pry
-      else
-        resp.write "Item not found"
-        resp.status = 400
-      end
+    #     binding.pry
+    #   else
+    #     resp.write "Item not found"
+    #     resp.status = 400
+    #   end
     else
       resp.write "Route not found"
       resp.status = 404
