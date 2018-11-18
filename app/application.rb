@@ -8,6 +8,7 @@ class Application
     item = req.path.split("/").pop
      if req.path.match(/items/)
        if Item.all.include?(item)
+         binding.pry 
          resp.write item.price
     #     binding.pry
         else
