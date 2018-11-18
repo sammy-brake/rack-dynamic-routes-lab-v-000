@@ -7,7 +7,12 @@ class Application
     req = Rack::Request.new(env)
     item = req.path.split("/").pop
     if req.path.match(/items/)
-    else 
+      #if the item is in @@items, print the price 
+      else 
+        resp.write "Item not found"
+        resp.status = 400
+      end
+    else
       resp.write "Route not found"
       resp.status = 404
     end
@@ -19,6 +24,6 @@ class Application
     #       resp.status = 400
     #     end
     #   else
-    #   
+    #
     resp.finish
 end
