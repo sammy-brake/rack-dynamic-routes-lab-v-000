@@ -6,8 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     item = req.path.split("/").pop
-
-    # if req.path.match(/items/)
+     if req.path.match(/items/)
      if @@items.include?(item)
         resp.write item.price
     #     binding.pry
