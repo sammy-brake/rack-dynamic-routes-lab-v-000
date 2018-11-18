@@ -7,10 +7,10 @@ class Application
     req = Rack::Request.new(env)
     item = req.path.split("/").pop
      if req.path.match(/items/)
+       binding.pry
+
        if Item.all.include?(item)
-         binding.pry
          resp.write item.price
-    #     binding.pry
         else
           resp.write "Item not found"
           resp.status = 400
