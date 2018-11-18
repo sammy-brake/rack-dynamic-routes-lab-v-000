@@ -6,9 +6,10 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     item = req.path.split("/").pop
+    
     #  if req.path.match(/items/)
     #    binding.pry
-    #    
+    #
     #     else
     #       resp.write "Item not found"
     #       resp.status = 400
