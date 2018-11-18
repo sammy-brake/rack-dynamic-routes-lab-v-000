@@ -9,7 +9,11 @@ class Application
     # binding.pry
     if req.path.match(/items/)
       if @@items.include?(item)
-        resp.write item.price 
+        resp.write item.price
+      else 
+        resp.write "Item not found"
+             resp.status = 400
+      end 
       #if the item is in @@items, print the price
     #   @@items.each do |individual_item|
     #     if individual_item == item
